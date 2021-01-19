@@ -20,7 +20,7 @@ const overlay = {
   zIndex: 1000
 }
 
-const LifepointsMenu = ({ open, onClose, flip }) => {
+const LifepointsMenu = ({ open, onClose, flip, setFlag }) => {
   if (!open)
     return null;
   return (
@@ -28,7 +28,7 @@ const LifepointsMenu = ({ open, onClose, flip }) => {
       <div style={overlay} />
       <div style={flip ? stylesFlip : styles}>
         <button className="back" onClick={onClose}>&larr;</button>
-        <Calculator />
+        <Calculator setFlag={setFlag} onClose={onClose}/>
       </div>
     </>
   );

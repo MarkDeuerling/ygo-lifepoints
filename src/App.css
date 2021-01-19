@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  font-family: 'Helvetica', monospace;
 }
 
 .middle {
@@ -18,7 +19,7 @@
 }
 
 .lifepoints-frame {
-  height: 35vh;
+  height: 40vh;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -104,8 +105,10 @@ button:active {
 
 .clock {
   font-size: 3em;
-  padding-top: 0.2em;
-  padding-bottom: 0.2em;
+  margin: auto;
+  /* padding-top: 0.2em;
+  padding-bottom: 0.2em; */
+  cursor: pointer;
 }
 
 @media (prefers-reduced-motion: no-preference) {
