@@ -1,6 +1,7 @@
 .App {
   text-align: center;
   font-family: 'Helvetica', monospace;
+  /* font-family: 'RealityHyper'; */
 }
 
 .middle {
@@ -56,6 +57,27 @@ button:active {
   box-shadow: inset 0px 0px 80px 0px rgba(0,0,0,0.25);
 }
 
+@font-face {
+  font-family: 'RealityHyper';
+  src: local('RealityHyper'), url(./RealityHyper.ttf) format('woff');
+}
+
+.main-menu {
+  background: #fff;
+  height: 100vh;
+  /* padding-top: 30vh; */
+}
+
+.main-menu-button {
+  background: #e0e0e7;
+  border: 1px solid #777;
+  width: 100%;
+  height: 7vh;
+  margin: auto;
+  margin-top: 3vh;
+  font-size: 2em;
+}
+
 .calculator {
   width: 320px;
   background: black;
@@ -93,6 +115,10 @@ button:active {
 
 .thousend {
   font-size: .3em;
+}
+
+.doubleNull {
+  font-size: .5em;
 }
 
 .minus {

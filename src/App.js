@@ -1,14 +1,26 @@
 import './App.css';
 import MiddleBar from './components/MiddleBar';
 import Lifepoints from './components/Lifepoints';
+import MainMenu from './components/MainMenu';
+import {useState} from 'react'
 
-function App() {
+
+const App = () => {
+  const [startDuel, setDuel] = useState(false)
+
   return (
     <div className="App">
       <div className="content">
-        <Lifepoints flip={true} />
-        <MiddleBar />
-        <Lifepoints />
+        {!startDuel && <MainMenu setDuel={setDuel}/>}
+        {startDuel &&
+          <>
+            <Lifepoints flip={true} />
+            <MiddleBar />
+            <Lifepoints />
+          </>
+        }
+        
+      
       </div>
     </div>
   );

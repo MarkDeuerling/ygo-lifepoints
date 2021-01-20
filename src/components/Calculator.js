@@ -1,8 +1,12 @@
 import { useState } from 'react';
+import useSound from 'use-sound';
 
-const Calculator = ({setFlag, onClose}) => {
+const Calculator = ({ setFlag, onClose }) => {
+  const [playTap] = useSound(process.env.PUBLIC_URL + '/assets/tap.mp3', {volume: .1});
+
   const [result, setResult] = useState(0);
   const handleNumInput = num => {
+    playTap();
     switch (num) {
       case -1: setResult(0); break;
       case -2: setFlag({ set: true, val: result, op: 'half' }); onClose(); break;
@@ -33,7 +37,7 @@ const Calculator = ({setFlag, onClose}) => {
         <button className="key minus" name='-' onClick={() => handleNumInput(-4) }>-</button>
         <button className="key" name='0' onClick={() => handleNumInput(0) }>0</button>
         <button className="key plus" name='+' onClick={() => handleNumInput(-5) }>+</button>
-        <button className="key" name='00' onClick={() => handleNumInput(-6) }>00</button>
+        <button className="key doubleNull" name='00' onClick={() => handleNumInput(-6) }>00</button>
       </div>
     </div>
   );
